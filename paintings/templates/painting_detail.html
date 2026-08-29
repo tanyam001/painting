@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+
+        <div class="row gx-5">
+
+            <!-- Painting image -->
+            <div class="col-md-6">
+                <img class="img-fluid rounded"
+                     src="{{ painting.image.url }}"
+                     alt="{{ painting.painting_name }}">
+            </div>
+
+            <!-- Painting information -->
+            <div class="col-md-6">
+
+                <h1 class="fw-bolder mb-4">
+                    {{ painting.painting_name }}
+                </h1>
+
+                <p>
+                    <strong>Year:</strong> {{ painting.year_drawn }}
+                </p>
+
+                <p>
+                    <strong>Dimensions:</strong> {{ painting.dimensions }}
+                </p>
+
+                {% if painting.summary %}
+                    <p class="mt-4">
+                        <strong>Description:</strong> {{ painting.summary }}
+                    </p>
+                {% endif %}
+
+                {% if painting.price %}
+                    <p class="mt-4">
+                        <strong>Price:</strong> ${{ painting.price }}
+                    </p>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

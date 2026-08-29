@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+            {% for painting in painting_list %}
+
+            <div class="col mb-5">
+                <div class="card h-100">
+
+                    <!-- Painting image -->
+                    <img class="card-img-top" style = "object-fit: contain;"
+                         src="{{ painting.image.url }}"
+                         alt="{{ painting.painting_name }}" />
+
+                    <!-- Painting name -->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">
+                                {{ painting.painting_name }}
+                            </h5>
+                        </div>
+                    </div>
+
+                    <!-- View button -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto"
+                               href="{% url 'painting_detail' painting.pk %}">
+                                View
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
