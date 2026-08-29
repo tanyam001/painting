@@ -81,7 +81,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # DATABASES = {
-#     "default": dj_database_url.config(default=os.environ.get("postgresql://root:TcfpJMPXfwzjJFSJf5BSbvIr@watercolorglory-data:5432/postgres"))
+#     "default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 # }
 
 DATABASES = {
